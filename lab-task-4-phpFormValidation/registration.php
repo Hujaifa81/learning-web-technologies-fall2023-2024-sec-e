@@ -11,6 +11,6 @@ $month = $REQUEST["month"];
 $year = $REQUEST["year"];
 
 if ($name === null || $email === null || $userName === null || $password === null || $confirmPassword === null) {
-    echo "All fields are required.";
+    echo "All fields are required .";
 }
 ?>
