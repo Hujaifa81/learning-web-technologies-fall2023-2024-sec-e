@@ -1,9 +1,9 @@
 <table border="1">
         
-        <?php include_once 'dashboardHeader.php'; ?>
+        <?php include_once ('dashboardHeader.php'); ?>
         <tr>
         <td>
-        <?php include_once 'account.php'; ?>
+        <?php include_once ('account.php'); ?>
         </td>
         <td>
             <form method="POST" action="">
@@ -19,6 +19,6 @@
                 </form></td>
         </tr>
         
-        <?php include_once 'dashboardFooter.php'; ?>
+        <?php include_once ('dashboardFooter.php'); ?>
         
     </table>

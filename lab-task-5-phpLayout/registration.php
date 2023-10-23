@@ -1,7 +1,7 @@
 
     <table border="1">
         
-            <?php include_once 'header.php'; ?>
+            <?php include_once ('header.php'); ?>
         
         <tr>
             <td>
@@ -38,7 +38,7 @@
             </form></td>
         </tr>
         
-            <?php include_once 'footer.php'; ?>
+            <?php include_once ('footer.php'); ?>
         
     </table>
 
