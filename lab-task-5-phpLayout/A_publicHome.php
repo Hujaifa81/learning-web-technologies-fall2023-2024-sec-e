@@ -1,6 +1,4 @@
-<?php
 
-?>
 <body>
     <table border="1">
        <?php include_once 'header.php'; ?>
