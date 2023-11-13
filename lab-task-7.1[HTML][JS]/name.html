@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Form Validation</title>
+   
 </head>
 <body>
     Name  <br><br>
@@ -13,20 +13,27 @@
             let name = document.getElementById('name').value;
             let nameLen = name.split(' ');
 
-            if(!name) alert("name can not be empty");
-            else if(nameLen.length < 2) alert("name has to contain atleast two words");
-            if(checkFirstChar(name[0])){}
-            else alert("name must start with a letter");
-            for(let i=0; i<name.length; i++){
-                if(checkChar(name[i])){}
-                else alert("name can only contain a-z or A-Z or dot or dash");
-            }  
+            if (!name) {
+                alert("Name cannot be empty");
+            } else if (nameLen.length < 2) { 
+                alert("Name has to contain at least two words");
+            } else if (!checkFirstChar(name[0])) {
+                alert("Name must start with a letter");
+            } else {
+                for (let i = 0; i < name.length; i++) {
+                    if (!checkChar(name[i])) {
+                        alert("Name can only contain a-z, A-Z, dot, or dash");
+                        return; 
+                    }
+                }
+                alert("Name is valid");
+            }
         }
-        function checkChar(character){
-            if(character >= 'A' && character <= 'Z' || character >= 'a' && character <= 'z' || character == '.' || character == '_' || character == ' ') return true;
+        function checkChar(ch){
+            if(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch == '.' || ch == '_' || ch == ' ') return true;
         }
-        function checkFirstChar(character){
-            if(character >= 'A' && character <= 'Z' || character >= 'a' && character <= 'z') return true;
+        function checkFirstChar(ch){
+            if(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z') return true;
         }
         
     </script>
