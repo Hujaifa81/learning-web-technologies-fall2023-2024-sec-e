@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+    <fieldset>
+        <legend><b>Date of Birth</b></legend>
+        &nbsp; &nbsp; dd &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; mm &nbsp; &nbsp; yyyy
+        <br>
+        <input type="text" name="day" id="day" size="2"> / <input type="text" name="month" id="month" size="2"> /<input type="text" name="year" id="year" size="4"> 
+        <hr>
+
+        <button onclick="validateForm()">Submit</button>
+    </fieldset>
+
+    <script>
+        function validateForm() {
+            let day = document.getElementById("day").value;
+            let month = document.getElementById("month").value;
+            let year = document.getElementById("year").value;
+
+            if (day === "" || month === "" || year === "") {
+                alert("Fields cannot be empty.");
+                return;
+            }
+
+            if (!checkChar(day) || !checkChar(month) || !checkChar(year)) {
+                alert("Day, month, and year must be numeric.");
+                return;
+            }
+
+            day = parseInt(day);
+            month = parseInt(month);
+            year = parseInt(year);
+
+            if (day < 1 || day > 31) {
+                alert("Invalid day");
+                return;
+            }
+
+            if (month < 1 || month > 12) {
+                alert("Invalid month");
+                return;
+            }
+
+            if (year < 1900 || year > 2016) {
+                alert("Invalid year");
+                return;
+            }
+
+            
+
+            alert("Form submitted successfully!");
+        }
+
+        function checkChar(ch) {
+            return ch >= '0' && ch <= '9';
+        }
+    </script>
+</body>
+</html>
