@@ -6,13 +6,13 @@ if(isset($_GET['delete'])){
 $userId=$_GET['id'];
 $deleteStatus=deleteUser($userId);
 if($deleteStatus){
-    header('location:../view/manageEmployees.php?deleteStatus=success');
+    header('location:../view/manageUsers.php?deleteStatus=success');
 }
 }
 
 if(isset($_GET['update'])){
     $userId=$_GET['id'];
-header("location:../view/updateEmployee.php?userId=$userId");
+header("location:../view/updateUser.php?userId=$userId");
 }
 if(isset($_POST['updateUserSubmit'])){
     $userId=$_POST['id'];
@@ -20,7 +20,7 @@ if(isset($_POST['updateUserSubmit'])){
     $userName=$_POST['updateUserName'];
     $updateStatus=updateUser($userId,$email,$userName);
     if($updateStatus){
-        header('location:../view/manageEmployees.php?updateStatus=success');
+        header('location:../view/manageUsers.php?updateStatus=success');
     }
 }
     

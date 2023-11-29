@@ -47,13 +47,13 @@ else{
                 <td><?=$users[$i]['profile']?></td>
                 <td><?=$users[$i]['REG_DATE']?></td>
                 <td>
-                <a href="../controller/manageEmployeesCheck.php?id=<?= urlencode($users[$i]['id']) ?>&update=true"> Update </a> |
-                <a href="../controller/manageEmployeesCheck.php?id=<?= urlencode($users[$i]['id']) ?>&delete=true"> DELETE </a>
+                <a href="../controller/manageEmployeeCheck.php?id=<?= urlencode($users[$i]['id']) ?>&update=true"> Update </a> |
+                <a href="../controller/manageEmployeeCheck.php?id=<?= urlencode($users[$i]['id']) ?>&delete=true"> DELETE </a>
                 </td>
             </tr>
         <?php } ?>            
         </table>
-        <a href="userRegistration.php">Add user</a>
+        <a href="addEmployee.php?addEmployee=true">Add Employee</a>
         <?php if(isset($_GET['updateStatus'])){echo "<h3>updated successfully</h3>";}?>
         <?php if(isset($_GET['deleteStatus'])){echo "<h3>deleted successfully</h3>";}?>
         <a href="adminDashboard.php">Back</a>

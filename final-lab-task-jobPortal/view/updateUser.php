@@ -9,14 +9,14 @@ $id="";
 $email="";
 $userName="";
 if(!isset($_GET['userId'])){
-    header('location:../view/manageEmployees.php?updateStatus=false');
+    header('location:../view/manageUsers.php?updateStatus=false');
 }
 
 else{
     $id=$_GET['userId'];
     $user=getUserWithId($id);
     if(!$user){
-        header('location:../view/manageEmployees.php?updateStatus=false');
+        header('location:../view/manageUsers.php?updateStatus=false');
         exit();
     }
     else{
@@ -32,5 +32,5 @@ else{
     ID: <input type="text" name="id" value="<?php echo $id;?>">
     <input type="submit" name="updateUserSubmit" value="Update">
 </form>
-<a href="manageEmployees.php">Back</a>
+<a href="manageUsers.php">Back</a>
 <a href="../controller/logout.php">Logout</a>

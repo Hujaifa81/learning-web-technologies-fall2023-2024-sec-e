@@ -1,6 +1,6 @@
 <?php
-require_once ('validation.php');
-require_once ('../model/employeeModel.php');
+require_once ('./validation.php');
+require_once ('../model/userModel.php');
 if(!isset($_POST['userRegistration'])){header('location: ../view/userRegistration.php');};
 $role='';
 $firstName=$_POST['firstName'];

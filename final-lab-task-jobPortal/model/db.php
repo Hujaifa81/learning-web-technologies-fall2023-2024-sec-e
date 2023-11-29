@@ -2,7 +2,7 @@
 $host='localhost';
 $userDb='root';
 $pass='';
-$dbName='employees';
+$dbName='jobPortal';
 
 function dbConnection(){
    global $host;

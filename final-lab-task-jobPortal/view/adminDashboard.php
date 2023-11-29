@@ -7,8 +7,7 @@ if (!isset($_SESSION['loggedIn'])) {
 ?>
 <ul>
     <li><a href="manageEmployees.php">Manages users</a></li>
-    <li><a href="manageJobs.php">Manage jobs</a></li>
-    <li><a href="searchComplaints.php">Search Complaints by Category</a></li>
+    <li><a href="searchEmployees.php">Search Employees </a></li>
     
 </ul>
 <a href="signIn.php">Back</a>

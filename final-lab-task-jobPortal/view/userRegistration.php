@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="..assest/js/validation.js"></script>
+    <title>Registration</title>
+    <script src="../assest/js/registrationCheck.js"></script>
+    <script src="../assest/js/validation.js"></script>
+   
+    
 </head>
 <body>
 <?php
@@ -150,10 +153,10 @@ if(isset($_GET['errorMsg'])){
 
 ?>
 
-<form onsubmit="return validateForm()" action="../controller/userRegistrationCheck.php" method="POST" enctype="multipart/form-data">
+<form onsubmit="validateForm()" action="../controller/userRegistrationCheck.php" method="POST" enctype="multipart/form-data" >
     <?php echo "<h1>{$errorMsgExisted}</h1>"; ?>
-    <?php echo "<h1>{$errorMsgExisted}</h1>"; ?>
-        Role: <input type="radio" name="role" value="User">User <input type="radio" name="role" value="admin">Admin  <?php   echo $errorMsgRole;  ?><br> <br>
+    
+        Role: <input type="radio" name="role" value="User"id="userRadio">User <input type="radio" name="role" value="admin" id="adminRadio">Admin  <?php   echo $errorMsgRole;  ?><br> <br>
         
         First Name: <input type="text" name="firstName" id="firstName" value="<?php echo $firstName;?>"><?php   echo $errorMsgFirstName;  ?><br> <br>
        
@@ -163,7 +166,7 @@ if(isset($_GET['errorMsg'])){
         Phone: <input type="text" name="phone" id="phone" value="<?php echo $phone;?>"><?php   echo $errorMsgPhone;  ?><br> <br>
         Password: <input type="password" name="password" id="password"><?php   echo $errorMsgPassword;  ?><br> <br>
         Confirm Password: <input type="password" name="confirmPassword" id="confirmPassword"><?php   echo $errorMsgConfirmPassword;  ?><br> <br>
-        Gender: <input type="radio" name="gender" value="male" id="gender">Male <input type="radio" name="gender" value="female">Female  <input type="radio" name="gender" value="others">Others <?php   echo $errorMsgGender;  ?><br> <br>
+        Gender: <input type="radio" name="gender" value="male" id="male">Male <input type="radio" name="gender" value="female" id="female">Female  <input type="radio" name="gender" value="others" id="others">Others <?php   echo $errorMsgGender;  ?><br> <br>
         District: 
         <select  name="district" id="district">
         <option value="dhaka">Dhaka</option>
@@ -180,77 +183,6 @@ if(isset($_GET['errorMsg'])){
     <input type="submit" value="Register" name="userRegistration">
 </form>
 <a href="signIn.php">Back</a>
-
-
-<script src="../controller/js/validation.js"></script>
-<script>
-    function validateForm() {
-        
-        const role = document.querySelector('input[name="role"]:checked');
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-        const userName = document.getElementById('userName').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmPassword').value;
-        const gender = document.querySelector('input[name="gender"]:checked');
-        const district = document.getElementById('district').value;
-        const address = document.getElementById('address').value;
-        const profile = document.getElementById('profile').value;
-        const agreement = document.getElementById('agreement');
-
-        
-       
-        if (!isValidName(firstName)) {
-            alert('Invalid first name!');
-            return false;
-        }
-        if(!isValidName(lastName)){
-            alert('Invalid last name!');
-            return false;
-        }
-
-        if (!isValidUserName(userName)) {
-            alert('Invalid user name!');
-            return false;
-        }
-        if(!isValidEmail(email)){
-            alert('Invalid email!');
-            return false;
-        }
-
-        if(isValidPhone(phone)){
-            alert("Invalid phone!");
-            return false;
-
-        }
-        if(!isValidPassword(password)){
-            alert("Invalid password!");
-            return false;
-        }
-        if(!isValidConfirmPassword(password, confirmPassword)){
-            alert("password mismatch!");
-            return false;
-        }
-        if(!isValidAddress(address)){
-            alert("Invalid address!");
-            return false;
-        }
-        // if(!isValidFile(type, size)){
-        //     alert("Invalid file!");
-        //     return false;
-        // }
-        if (!agreement.checked) {
-        alert("Please accept the Account Agreement!");
-        return false;
-    }
-
-        
-
-        return true; 
-    }
-</script>
 
 </body>
 </html>
