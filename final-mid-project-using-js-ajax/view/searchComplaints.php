@@ -53,10 +53,17 @@ if(isset($_GET['NoComplaints'])){
 ?>
 <br><br>
     <form onsubmit="searchComplaints(); return false;">
-        Search: <input type="text" name="search" id="search"> <br><br>
-        <input type="submit" name="searchSubmit" value="Search"><br><br>
+    <?php
+    if(!isset($_GET['done'])){
+        echo "Search: <input type='text' name='search' id='search'> <br><br>
+        <input type='submit' name='searchSubmit' value='Search'><br><br>
+        <a href='adminDashboard.php'>Back</a>
+        <a href='../controller/logout.php'>Logout</a>";
+    }
+        
+    ?>
+        
     </form>
-    <a href="adminDashboard.php">Back</a>
-    <a href="../controller/logout.php">Logout</a>
+    
 
 </body>

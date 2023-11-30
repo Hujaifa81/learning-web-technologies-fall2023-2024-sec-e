@@ -11,7 +11,9 @@ $searchResult = getSearchComplaintsByCategory($category);
 
 if ($searchResult) {
     $_SESSION['complaints'] = $searchResult;
-    echo 'Reload the page.';
+    header('location:../view/searchComplaints.php?done=true');
+    
+    
 } else {
     echo 'No complaints found.';
 }
