@@ -35,7 +35,7 @@ if(isset($_GET['errorMsg'])){
     }
 }
 ?>
-<h1 align="center">Welcome to Complaints Management System</h1>
+<h1 align="center">Welcome to Job Portal</h1>
 <?php echo "<h5>{$afterReg}</h5>"?><br>
 <?php if(isset($_GET['passwordChanged'])){echo "<h3>password changed successfully</h3>";}?>
 
