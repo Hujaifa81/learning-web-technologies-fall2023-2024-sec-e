@@ -1,0 +1,54 @@
+/* updateArea.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    /* Button color */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Button color on hover */
+}
+
+#resultS {
+    margin-top: 20px;
+    text-align: center;
+    color: #007bff;
+    /* Result message color */
+}
+
+a {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    /* Link color */
+    margin-right: 10px;
+}
+
+a:hover {
+    color: #0056b3;
+    /* Link color on hover */
+}
